@@ -10,9 +10,7 @@ export async function POST(request :NextRequest) {
         { status: 401 }
     )};
     try{ 
-        const body = await request.json();
         const { motion } = await request.json();
-        console.log('pkg', motion)
 
         if (motion !== 'boolean'){
             return NextResponse.json(
