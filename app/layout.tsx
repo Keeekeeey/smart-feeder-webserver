@@ -40,7 +40,7 @@ export default function RootLayout({
                 className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded">
                 Webcam
               </a>
-            </div>
+            </div> 
           </div>
         </header>
 
