@@ -1,7 +1,7 @@
 import prisma from '@/lib/prisma'
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(request :NextRequest) {
+export async function POST(request : NextRequest) {
     const apiKey = request.headers.get('authorization')?.replace('Bearer ','');
 
     if (apiKey !== process.env.API_SECRET_KEY){
@@ -11,8 +11,7 @@ export async function POST(request :NextRequest) {
     )};
     try{ 
         const { motion } = await request.json();
-
-        if (motion !== 'boolean'){
+        if (motion === undefined || motion === null) {
             return NextResponse.json(
                 { error : 'Motion must be of type boolean'},
                 { status  : 400}
