@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Button from "@components/ui/button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,18 +25,26 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-          <div className="flex flex-row">
+        <header className="pt-10 fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+          <div className="flex flex-row px-10">
             <div className="basis-1/3">
-              <Button>button</Button>
-            </div>
-            <div className="basis-2/3">
-              <Button>button</Button>
+              <a href="/" 
+                className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded">
+                Home
+              </a>
+              <a href="/motionEventsDashboard" 
+                className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded">
+                Database
+              </a>
+              <a href="/page" 
+                className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded">
+                Webcam
+              </a>
             </div>
           </div>
         </header>
 
-        <main className="pt-16">
+        <main className="pt-20">
           {children}
         </main>
       </body>
