@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 type MotionEvent = {
   id: number;
   motion: boolean;
+  catName:   string;
+  camName:   string;
+  actuated:  boolean;
   timestamp: string;
 };
 
