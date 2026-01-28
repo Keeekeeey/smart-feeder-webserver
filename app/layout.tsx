@@ -23,30 +23,41 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <header className="pt-10 fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-          <div className="flex flex-row px-10">
-            <div className="basis-1/3">
+    <html lang="en" className="h-full bg-[#dbe8cc]">
+      <body 
+      className={`${geistSans.variable} ${geistMono.variable} antialiased h-full bg-[#dbe8cc]`}>
+        <header className="pt-10 fixed top-0 left-0 right-0 z-50 ">
+          <div className="flex flex-row px-20 ">
+            <div className="basis-1/3 ">
               <a href="/" 
-                className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded">
+                className="transition delay-50 duration-300 ease-in-out
+                border-t-2 border-l-2 border-r-2 bg-[#c5d4b3] text-[#8f9e7f] hover:bg-[#8f9e7f] hover:text-[#8f9e7f]  px-4 py-2 rounded">
                 Home
               </a>
               <a href="/motionEventsDashboard" 
-                className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded">
+                className="transition delay-50 duration-300 ease-in-out
+                border-t-2 border-l-2 border-r-2 bg-[#c5d4b3] text-[#8f9e7f] hover:bg-[#8f9e7f] hover:text-[#8f9e7f] px-4 py-2 rounded">
                 Database
               </a>
               <a href="/page" 
-                className="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded">
+                className="transition delay-50 duration-300 ease-in-out
+                border-t-2 border-l-2 border-r-2 bg-[#c5d4b3] text-[#8f9e7f] hover:bg-[#8f9e7f] hover:text-[#8f9e7f] px-4 py-2 rounded">
                 Webcam
               </a>
             </div> 
           </div>
         </header>
 
-        <main className="pt-20">
-          {children}
-        </main>
+        <div className="flex">  
+          <div className="size-14 flex-none"></div>  
+          <div className="size-14 grow p-4">
+              <div className="size-14 flex-none"></div>  
+              <main className="rounded-lg p-4 bg-[#c5d4b3] border-white border-2">
+                {children}
+              </main>
+            </div>  
+          <div className="size-14 flex-none"></div>
+        </div>
       </body>
     </html>
   );

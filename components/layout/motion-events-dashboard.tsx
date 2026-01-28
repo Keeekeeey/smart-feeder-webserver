@@ -27,10 +27,11 @@ export function MotionEventsDashboard( {initialEvents} : Props ) {
           {events.map((event) => (
             <tr
               key={event.id}
-              className="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-900/50 dark:even:bg-gray-950"
+              className="bg-white rounded hover:bg-[#dbe8cc] cursor-pointer p-2"
             >
               <td>{event.motion.toString()}</td>
               <td>
+                <p className="text-xs text-gray-500">
                 {new Date(event.timestamp).toLocaleDateString("en-US", {
                   month: "short",
                   day: "numeric",
@@ -38,6 +39,7 @@ export function MotionEventsDashboard( {initialEvents} : Props ) {
                   hour: "2-digit",
                   minute: "2-digit",
                 })}
+                </p>
               </td>
             </tr>
           ))}
