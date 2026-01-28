@@ -15,7 +15,7 @@ export function MotionEventsDashboard( {initialEvents} : Props ) {
   const [events, setEvents] = useState(initialEvents)
 
   return (
-    <div className="table-wrp block max-30">
+    <div className="table-wrp block max-10">
       <table className ="w-full">
         <thead className ="bg-white border b sticky top-0">
           <tr>

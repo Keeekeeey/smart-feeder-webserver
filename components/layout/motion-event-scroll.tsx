@@ -15,7 +15,7 @@ export function RecentEventsWidget({ initialEvents }: Props) {
   const [recentEvents, setRecentEvents] = useState(initialEvents);
 
   return (
-    <div className="h-fill w-fill overflow-y-scroll rounded p-4 bg-gray-50">
+    <div className=" rounded p-4 bg-[#8f9e7f]">
       <div className="p-3 text-sm font-bold mb-2 top-0 bg-[#c5d4b3] text-[#8f9e7f] ">
         Recent Activity
       </div>
@@ -23,7 +23,7 @@ export function RecentEventsWidget({ initialEvents }: Props) {
         {recentEvents.map((event) => (
           <div
             key={event.id}
-            className="bg-white rounded hover:bg-[#dbe8cc] hover:text-[#8f9e7f] cursor-pointer p-2"
+            className="bg-[#eff8e5] rounded hover:bg-white hover:text-[#8f9e7f] cursor-pointer p-2"
           >
             {event.motion.toString()}
                 <p className="text-xs text-gray-500">
