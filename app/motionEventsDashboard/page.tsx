@@ -10,7 +10,12 @@ export default async function MotionEventsPage() {
   
   const initialEvents = JSON.parse(JSON.stringify(events))
 
-  return < MotionEventsDashboard initialEvents={initialEvents} />
+  return (
+    <div className='flex-1 rounded p-4 text-center bg-[#8f9e7f] min-h-100'>
+        < MotionEventsDashboard initialEvents={initialEvents} />
+        </div>
+  
+  ) 
 }
 
 

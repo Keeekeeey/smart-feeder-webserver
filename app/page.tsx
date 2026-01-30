@@ -27,7 +27,7 @@ export default async function Home() {
             <div className="border-9 border-[#c5d4b3]">
             </div>
             <a 
-              href="/page" 
+              href="/webcam" 
               className="block text-center border-2 border-[#8f9e7f] text-[#8f9e7f] hover:text-white hover:bg-[#8f9e7f] px-4 py-2 rounded"
             >
               Webcam
