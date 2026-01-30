@@ -10,17 +10,17 @@ export async function POST(request : NextRequest) {
         { status: 401 }
     )};
     try{ 
-        const { motion } = await request.json();
-        if (motion === undefined || motion === null) {
+        const { catName } = await request.json();
+        if (catName === undefined || catName === null) {
             return NextResponse.json(
-                { error : 'Motion must be of type boolean'},
+                { error : 'catName must be of type string'},
                 { status  : 400}
             )
         }
 
         await prisma.motionEvent.create({
                 data: {
-                    motion: motion,
+                    catName: catName,
                     timestamp: new Date()
                 }
             });

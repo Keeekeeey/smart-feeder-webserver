@@ -9,9 +9,6 @@ datasource db {
 
 model MotionEvent {
   id        Int      @id @default(autoincrement())
-  motion    Boolean  
   catName   String
-  camName   String
-  actuated  Boolean
   timestamp DateTime @default(now())
 }
