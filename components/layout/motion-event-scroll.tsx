@@ -3,10 +3,7 @@ import { useEffect, useState } from "react";
 
 type MotionEvent = {
   id: number;
-  motion: boolean;
   catName:   string;
-  camName:   string;
-  actuated:  boolean;
   timestamp: string;
 };
 
@@ -28,7 +25,7 @@ export function RecentEventsWidget({ initialEvents }: Props) {
             key={event.id}
             className="bg-[#eff8e5] rounded hover:bg-white hover:text-[#8f9e7f] cursor-pointer p-2"
           >
-            {event.motion.toString()}
+            {event.catName.toString()}
                 <p className="text-xs text-gray-500">
               {new Date(event.timestamp).toLocaleDateString("en-US", {
                 month: "short",
