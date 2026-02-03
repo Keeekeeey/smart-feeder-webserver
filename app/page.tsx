@@ -47,9 +47,14 @@ export default async function Home() {
       {/* end cols */}
       <div className="border-9 border-[#c5d4b3]">
       </div>
-      <p className="bg-amber-50 p-4 rounded-2xl">
-        Duis sollicitudin elit sed tellus blandit viverra sed eget odio. Donec accumsan tempor lacus, et venenatis elit feugiat non. Duis porta eros et velit blandit dapibus. Curabitur ac finibus eros. Duis placerat velit vitae massa sodales, eget mattis nibh pellentesque.
-      </p>
+      <div className="bg-amber-50 p-4 rounded-2xl">
+        <p>
+          A real-time webcam application that utilizes computer vision to track my cats and protect one cat’s prescription food from the other. When the webcam detects the wrong cat a mechanical cover is deployed to block access.
+        </p>
+        <p>
+        Built using  Ultralytics YOLOv8 on 1000+ labeled images of both cats (Sherbert and Mousse). The model is deployed on a NAS with the Raspberry Pi4 as a client for minimal storage overhead. Using the PiCamera2 library, model inference is triggered upon motion. Once the model determines which cat is present, a 3d-printed block is deployed to physically block the food bowl. The results are logged in a local PostgreSQL database via Prisma and Websockets. The database and webcam display live feed and feeding history. 
+        </p>
+      </div>
     </div>
   );
 }
