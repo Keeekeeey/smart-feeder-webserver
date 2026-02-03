@@ -31,17 +31,17 @@ export default function RootLayout({
             <div className="basis-1/3 ">
               <a href="/" 
                 className="transition delay-50 duration-300 ease-in-out
-                border-t-2 border-l-2 border-r-2 bg-[#c5d4b3] text-[#8f9e7f] hover:bg-[#8f9e7f] hover:text-white font-bold px-4 py-2 rounded">
+                bg-[#c5d4b3] text-[#8f9e7f] hover:bg-[#8f9e7f] hover:text-white font-bold px-4 py-2 rounded">
                 Home
               </a>
               <a href="/motionEventsDashboard" 
                 className="transition delay-50 duration-300 ease-in-out
-                border-t-2 border-l-2 border-r-2 bg-[#c5d4b3] text-[#8f9e7f] hover:bg-[#8f9e7f] hover:text-white font-bold px-4 py-2 rounded">
+                bg-[#c5d4b3] text-[#8f9e7f] hover:bg-[#8f9e7f] hover:text-white font-bold px-4 py-2 rounded">
                 Database
               </a>
               <a href="/webcam" 
                 className="transition delay-50 duration-300 ease-in-out
-                border-t-2 border-l-2 border-r-2 bg-[#c5d4b3] text-[#8f9e7f] hover:bg-[#8f9e7f] hover:text-white font-bold px-4 py-2 rounded">
+                bg-[#c5d4b3] text-[#8f9e7f] hover:bg-[#8f9e7f] hover:text-white font-bold px-4 py-2 rounded">
                 Webcam
               </a>
             </div> 
@@ -55,6 +55,7 @@ export default function RootLayout({
               <main className="rounded-lg p-4 bg-[#c5d4b3] border-white border-2">
                 {children}
               </main>
+              
             </div>  
           <div className="size-14 flex-none"></div>
         </div>
