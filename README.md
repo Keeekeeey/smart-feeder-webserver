@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Smart Feeder Web Server
 
-## Getting Started
+A real-time computer vision system that protects prescription cat food using automated access control. When the webcam detects the wrong cat approaching the food bowl, it is logged.
+## Overview
 
-First, run the development server:
+This project uses AI-powered cat recognition to ensure only the correct cat can access prescription food. Built with YOLOv11n and deployed on edge devices for real-time inference.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Real-time Cat Detection**: Custom YOLOv11n model trained on 1000+ labeled images of two cats (Sherbert and Mousse)
+- **Motion-Triggered Inference**: Efficient processing using PiCamera2 motion detection
+- **Automated Physical Blocking**: 3D-printed mechanical cover deployment
+- **Live Web Dashboard**: Real-time webcam feed and feeding history
+- **Data Logging**: PostgreSQL database tracking with WebSocket updates
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How It Works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Motion Detection**: PiCamera2 detects movement near the food bowl
+2. **Inference**: Frame sent to NAS for YOLOv11n model inference
+3. **Decision**: Model identifies which cat is present
+4. **Action**: If wrong cat detected, mechanical blocker deploys
+5. **Logging**: Event logged to PostgreSQL via WebSocket
+6. **Dashboard**: Live feed and history displayed on web interface
 
-## Learn More
+## Model Training
 
-To learn more about Next.js, take a look at the following resources:
+The YOLOv11n model was trained on:
+- 1000+ labeled images of Sherbert and Mousse
+- Various lighting conditions and angles
+- Data augmentation for robustness
+- Other classes were disregarded in favor of a smaller model size
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> More model information can be found [here ](https://github.com/Keeekeeey/YOLOv11n-Cat-Classifier)
+## Acknowledgments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Ultralytics for YOLOv11n 
+- Raspberry Pi Foundation
+- OpenCV for motion detection and frame processing
+- The cats (Sherbert and Mousse) for being patient test subjects
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Note**: This is a pet project (pun intended) for managing prescription cat food access. I encourage you to always supervise automated pet care systems.
