@@ -11,7 +11,7 @@
 !.yarn/versions
 /lib
 /prisma/migrations
-/venv
+/venv 
 
 # testing
 /coverage

@@ -3,9 +3,13 @@ import numpy as np
 import asyncio
 import base64
 import time
+import os
+from dotenv import load_dotenv
 
 from picamera2 import Picamera2
 from websockets.asyncio.server import serve
+
+self.api_key = os.getenv('API_SECRET_KEY')
 
 picam = Picamera2()
 config = picam.create_preview_configuration()
@@ -14,7 +18,7 @@ picam.start()
 time.sleep(2)
 
 async def echo(websocket):
-    print("client connected")
+    print("client attempting to connect")
 
     stop_event = asyncio.Event()
     stream_event = asyncio.Event()

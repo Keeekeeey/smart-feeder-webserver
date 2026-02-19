@@ -1,5 +1,6 @@
 import prisma from "@/lib/prisma";
-import { MotionEventsDashboard } from "@/components/layout/motion-events-dashboard"
+import { MotionEventsDashboard } from "@/app/components/layout/motion-events-dashboard"
+export const dynamic = 'force-dynamic'
 
 export default async function MotionEventsPage() {
 

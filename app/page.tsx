@@ -1,6 +1,7 @@
 import prisma from '@/lib/prisma'
-import Button from "@components/ui/button";
-import { RecentEventsWidget } from "@/components/layout/motion-event-scroll"
+import Button from "@/app/components/ui/button";
+import { RecentEventsWidget } from "@/app/components/layout/motion-event-scroll"
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const events = await prisma.motionEvent.findMany({
