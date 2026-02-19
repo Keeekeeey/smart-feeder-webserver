@@ -1,10 +1,10 @@
 'use client'
 import { useState, useEffect, useRef} from 'react'
-import LoadingSpinner from '@/components/ui/loading-spinner';
+import LoadingSpinner from '@/app/components/ui/loading-spinner';
 
 export default function webcamPage(){
   const [loading,setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(false);
+  const [error, setError] = useState<string | null>('false');
   const imgRef = useRef<HTMLImageElement>(null);
   const wsRef = useRef<WebSocket | null>(null);
 
