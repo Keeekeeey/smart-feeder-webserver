@@ -5,6 +5,7 @@ type MotionEvent = {
   id: number;
   catName:   string;
   timestamp: string;
+  visits: number;
 }
 
 type Props = {
@@ -19,7 +20,7 @@ export function MotionEventsDashboard( {initialEvents} : Props ) {
       <table className ="table-auto w-full text-[#8f9e7f]">
         <thead className ="bg-[#f6fdee] border b sticky top-0">
           <tr>
-            <th className="bg-[#e8f8d6]">Cat Name</th>
+            <th className="bg-[#e8f8d6]">Activity</th>
             <th className="bg-[#e8f8d6]" >Timestamp</th>
           </tr>
         </thead>
@@ -29,7 +30,12 @@ export function MotionEventsDashboard( {initialEvents} : Props ) {
               key={event.id}
               className="text-center bg-white rounded hover:bg-[#dbe8cc] cursor-pointer p-2 even:bg-gray-50  max-10 divide-y divide-x-0 divide-gray-200"
             >
-              <td>{event.catName.toString()}</td>
+              <td>
+               <span className="font-bold">{event.catName}</span>
+               <span className="text-s text-gray-500"> ate at sherbert's bowl, </span>
+               <span className="font-bold">{event.visits}</span>
+               <span className="text-s text-gray-500">  times today,</span>
+                </td>
               <td>
                 <p className="text-xs text-gray-500">
                 {new Date(event.timestamp).toLocaleDateString("en-US", {

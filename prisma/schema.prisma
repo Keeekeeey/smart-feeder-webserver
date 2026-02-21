@@ -9,6 +9,7 @@ datasource db {
 
 model MotionEvent {
   id        Int      @id @default(autoincrement())
-  catName   String
   timestamp DateTime @default(now())
+  catName   String
+  visits    Int      @default(0)
 }

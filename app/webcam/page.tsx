@@ -43,21 +43,21 @@ export default function webcamPage(){
 
 
   return (
-    <div className='min-h-100 '>
+    <div className='min-h-100'>
       <div className='flex-1 rounded p-4 text-center bg-[#8f9e7f] min-h-100'>
         {loading && <LoadingSpinner/> }
 
-        {error && <LoadingSpinner/> &&(
-          <div className= "p-40">{error}</div>
-        )}
 
-        {!loading && !error && (
-          <img ref={imgRef}
+        {!loading && (
+          <div className='items-center text-justify '>
+          <img className='mx-auto'
+          ref={imgRef}
           style={{
             maxWidth: '100%',
             height:'auto',
             display:'block'
           }}></img>
+          </div>
         )}
       </div>
     </div>

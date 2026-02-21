@@ -13,6 +13,7 @@ type Props = {
 
 export function RecentEventsWidget({ initialEvents }: Props) {
   const [recentEvents, setRecentEvents] = useState(initialEvents);
+  
 
   return (
     <div className=" rounded p-4 bg-[#8f9e7f]">
@@ -25,7 +26,10 @@ export function RecentEventsWidget({ initialEvents }: Props) {
             key={event.id}
             className="bg-[#eff8e5] rounded hover:bg-white hover:text-[#8f9e7f] cursor-pointer p-2"
           >
-            {event.catName.toString()}
+            
+               <span className="font-bold">{event.catName}</span>
+               <span className="text-s text-gray-500"> ate at sherbert's bowl</span>
+                
                 <p className="text-xs text-gray-500">
               {new Date(event.timestamp).toLocaleDateString("en-US", {
                 month: "short",
