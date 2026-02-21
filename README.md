@@ -1,9 +1,7 @@
+![Website Home Page Image](./Readmevisuals/homescreenvisual.png)
 # Smart Feeder Web Server
 
 A real-time computer vision system that protects prescription cat food using automated access control. When the webcam detects the wrong cat approaching the food bowl, it is logged.
-## Overview
-
-This project uses AI-powered cat recognition to ensure only the correct cat can access prescription food. Built with YOLOv11n and deployed on edge devices for real-time inference.
 
 ## Features
 
@@ -12,6 +10,8 @@ This project uses AI-powered cat recognition to ensure only the correct cat can 
 - **Automated Physical Blocking**: 3D-printed mechanical cover deployment
 - **Live Web Dashboard**: Real-time webcam feed and feeding history
 - **Data Logging**: PostgreSQL database tracking with WebSocket updates
+
+![Website Home Page Image](./Readmevisuals/webcamvisual.png)
 
 ## How It Works
 
